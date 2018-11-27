@@ -4,7 +4,7 @@
     set_error_handler("var_dump");
 
     $date = date_create()->format('mmddYYhhmmss');
-    $fileName = "ContactRequest_" . $date . ".txt";
+    $fileName = "CustomerRequests/ContactRequest_" . $date . ".txt";
 
     $contactFile = fopen($fileName, "a") or die("Unable to open file!");
     $txt = "Name is : " . $_POST["contact_name"] . "\n";
