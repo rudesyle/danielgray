@@ -16,7 +16,9 @@ Released   : 20130801
 <title></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Open+Sans+Condensed:300,700" rel="stylesheet" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
@@ -35,7 +37,7 @@ Released   : 20130801
 		<ul>
 			<li id="liHome" class="menuLi"><a href="#" accesskey="1" title="" onClick="changePage('Home');">Homepage</a></li>
 			<li id="liServices" class="menuLi"><a href="#" accesskey="1" title="" onClick="changePage('Services');">Services</a></li>
-			<li id="liQuote" class="menuTech"><a href="#" accesskey="2" title="" onClick="changePage('Tech');">Technologies</a></li>
+			<li id="liTech" class="menuLi"><a href="#" accesskey="2" title="" onClick="changePage('Tech');">Technologies</a></li>
 			<li id="liContact" class="menuLi"><a href="#" accesskey="5" title="" onClick="changePage('Contact');">Contact Us</a></li>
 		</ul> 
 	</div>
@@ -91,21 +93,27 @@ Released   : 20130801
 				<div class="title">
 					<h2>How can we help?</h2>
 				</div>
-				<form name="ajax-contact" id="ajax-contact" action="/ajax/submit.php" method="post">
-					<div class="col-sm-6 col-md-6 input-required">
-					<input type="text" name="contact_name" value="" placeholder="Name" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-					</div>
-					<div class="col-sm-6 col-md-6 input-required">
-					<input type="text" name="contact_email" value="" placeholder="E-mail">
+				<div class="alert alert-success">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<strong>Successfully submitted!</strong> The form is valid.
+				</div>
+				<form name="ajax-contact" id="ajax-contact" action="sendcontact.php"> 
+					<div class="col-sm-6 col-md-6">
+					<label for="contact_name"> Name * :</label>
+					<input type="text" name="contact_name" value="" placeholder="Name" 
+						style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"
+						required="">
 					</div>
 					<div class="col-sm-6 col-md-6">
-					<input type="text" name="contact_phone" value="" placeholder="Phone">
+					<label for="contact_email"> Email * :</label><br/>
+					<input type="email" name="contact_email" value="" placeholder="Email" required="">
 					</div>
-					<div class="col-md-12 input-required">
-					<textarea name="contact_msg" rows="13" placeholder="How can we help you?"></textarea>
+					<div class="col-md-12">
+					<label for="contact_msg"> Questions / Comments * :</label>
+					<textarea name="contact_msg" rows="13" placeholder="How can we help you?" required=""></textarea>
 					</div>
 					<div id="comment-submit">
-					<input name="submit" type="submit" id="submit" tabindex="5" value="Send"  class="button">
+					<input name="submitContactForm" type="button" id="submitContactForm" tabindex="5" value="Send"  class="button">
 					</div>
 				</form>
 			</div>
@@ -133,11 +141,10 @@ Released   : 20130801
 </body>
 </html>
 
-<script
-			  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
 			  crossorigin="anonymous">
 </script>
+
 <script>
 $( document ).ready(function() {
     $('#pageHome').show();
@@ -150,4 +157,18 @@ function changePage(newPage){
 	$('#page'+newPage).show();
 	$('#li'+newPage).addClass('current_page_item');
 }
+
+$("submitContactForm").click(function(){
+	var contactForm = $('form');
+
+	$.post(contactForm.attr('action'), contactForm.serialize(), function(res){
+		// Do something with the response `res`
+		alert(res);
+		// Don't forget to hide the loading indicator!
+	});
+
+	return false; // prevent default action
+
+});
+
 </script>
