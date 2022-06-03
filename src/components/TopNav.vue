@@ -8,25 +8,11 @@
 			<li id="liTech" class="menuLi"><a href="#" accesskey="2" title="" onClick="changePage('Tech');">Technologies</a></li>
 			<li id="liContact" class="menuLi"><a href="#" accesskey="5" title="" onClick="changePage('Contact');">Contact Us</a></li>
 		</ul> 
-    <Slide id="hamburger">
-      <a id="home" href="#">
-        <span>Home</span>
-      </a>
-    </Slide>
+
 	</div>
 </div>
 </template>
 
-<script>
-import { Slide } from 'vue-burger-menu'
-
-export default {
-   name: 'TopNav',
-   components: {
-        Slide // Register your component
-    }
-}
-</script>
 
 <style>
 .container
