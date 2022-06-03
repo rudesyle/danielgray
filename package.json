@@ -1,0 +1,14 @@
+{
+  "name": "rude-coders",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "start": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "gridsome": "^0.7.0",
+    "vue-burger-menu": "^2.0.5"
+  }
+}
