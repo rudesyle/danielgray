@@ -26,6 +26,7 @@ query {
 </static-query>
 
 <style>
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 11pt;
